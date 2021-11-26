@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+}
+
+body {
+    height: 80vh;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1.5rem 0;
+}
+
+nav ul li {
+    display: flex;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    transition: all 500ms;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+}
+
+nav ul li a:hover {
+    color: #0791d3;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.page-title {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    font-weight: bold 700;
+    font-size: 1.5rem;
+}
+
+.rooms-section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    overflow-y: scroll;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+}
+
+#show-form {
+    margin: .7rem 0;
+}
+
+#show-form button {
+    padding: .5rem;
+}
+
+#new-room-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-room-form label, input {
+    margin: 0.5rem 0;
+}
+
+#new-room-form button {
+    margin: 1rem 0;
+}
+
+.hide {
+    display: none;
+}
+
+.rooms {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+}
+
+.rooms .room {
+    display: flex;
+    width: 15%;
+    max-width: 15%;
+    flex-direction: column;
+    margin: 1rem .5rem;
+    background: #ccc;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+    background: #0791d3;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.rooms .room button, span {
+    margin: .4rem 0;
+}
+
+.btn-main {
+    padding: 0.4rem;
+    background: #ff055a;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+    transition: all 400ms;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -ms-transition: all 400ms;
+    -o-transition: all 400ms;
+}
+
+.btn-main:hover {
+    background: #1eb858;
+}
