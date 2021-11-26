@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What is the rarest M&M color?",
+            "correct_answer": "Brown",
+            "incorrect_answers": [
+                "Blue",
+                "Red",
+                "Green"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In a website browser address bar, what does “www” stand for?",
+            "correct_answer": "World Wide Web",
+            "incorrect_answers": [
+                "World Wide Website",
+                "World Web Word",
+                "Web Wide World"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In what year were the first Air Jordan sneakers released?",
+            "correct_answer": "1984",
+            "incorrect_answers": [
+                "1999",
+                "2012",
+                "1976"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In a bingo game, which number is represented by the phrase “two little ducks”?",
+            "correct_answer": "22",
+            "incorrect_answers": [
+                "77",
+                "44",
+                "11"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Tennis star Serena Williams won which major tournament while pregnant with her first child?",
+            "correct_answer": "The Australian Open",
+            "incorrect_answers": [
+                "French Open",
+                "Wimbledon",
+                "US Open"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Which singer’s real name is Stefani Joanne Angelina Germanotta?",
+            "correct_answer": "Lady Gaga",
+            "incorrect_answers": [
+                "Whitney Houston",
+                "Mariah Carey",
+                "Christina Aguilera"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Where were the Declaration of Independence, the Constitution, and the Bill of Rights stored during World War II?",
+            "correct_answer": "Fort Knox",
+            "incorrect_answers": [
+                "The White House",
+                "10 Downing Street",
+                "The kremlin"
+            ]
+
+        }
+    ]
+}
