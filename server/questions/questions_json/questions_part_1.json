@@ -1,0 +1,405 @@
+{
+    "questions": [
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What is the rarest M&M color?",
+            "correct_answer": "Brown",
+            "answer_options": [
+                "Blue",
+                "Red",
+                "Green",
+                "Brown"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In a website browser address bar, what does “www” stand for?",
+            "correct_answer": "World Wide Web",
+            "answer_options": [
+                "World Wide Website",
+                "World Web Word",
+                "Web Wide World",
+                "World Wide Web"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In what year were the first Air Jordan sneakers released?",
+            "correct_answer": "1984",
+            "answer_options": [
+                "1999",
+                "2012",
+                "1976",
+                "1984"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In a bingo game, which number is represented by the phrase “two little ducks”?",
+            "correct_answer": "22",
+            "answer_options": [
+                "77",
+                "44",
+                "11",
+                "22"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Tennis star Serena Williams won which major tournament while pregnant with her first child?",
+            "correct_answer": "The Australian Open",
+            "answer_options": [
+                "French Open",
+                "Wimbledon",
+                "US Open",
+                "The Australian Open"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Which singer’s real name is Stefani Joanne Angelina Germanotta?",
+            "correct_answer": "Lady Gaga",
+            "answer_options": [
+                "Whitney Houston",
+                "Mariah Carey",
+                "Christina Aguilera",
+                "Lady Gaga"
+            ]
+
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Where were the Declaration of Independence, the Constitution, and the Bill of Rights stored during World War II?",
+            "correct_answer": "Fort Knox",
+            "answer_options": [
+                "The White House",
+                "10 Downing Street",
+                "The kremlin",
+                "Fort Knox"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "What's the biggest animal in the world?",
+            "correct_answer": "Blue Whale",
+            "answer_options": [
+                "Elephant",
+                "Giraffe",
+                "Lion",
+                "Blue Whale"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "hard",
+            "question": "How many times has andy Murray won wimbledon playing singles?",
+            "correct_answer": "Twice",
+            "answer_options": [
+                "Once",
+                "Four Times",
+                "Twenty Times",
+                "Twice"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Which country is brie cheese originally from?",
+            "correct_answer": "France",
+            "answer_options": [
+                "Germany",
+                "Netherlands",
+                "Poland",
+                "France"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "What is the name of the capital of Iceland?",
+            "correct_answer": "Reykjavík",
+            "answer_options": [
+                "Klausturholar",
+                "Skutustadhir",
+                "Dave",
+                "Reykjavík"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What year did Margret Thatcher die?",
+            "correct_answer": "2013",
+            "answer_options": [
+                "1997",
+                "2003",
+                "2006",
+                "2013"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "What painted the Mona Lisa?",
+            "correct_answer": "Leonardo da Vinci",
+            "answer_options": [
+                "Vincent van Gog",
+                "Rembrandt",
+                "Raphael",
+                "Leonardo da Vinci"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What planet is the closest to the sun?",
+            "correct_answer": "Mercury",
+            "answer_options": [
+                "Pluto",
+                "Venus",
+                "Saturn",
+                "Mercury"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Who plays Delboy Trotter in Only Fools and Horses?",
+            "correct_answer": "David Jason",
+            "answer_options": [
+                "Kenneth MacDonald",
+                "Roy Heather",
+                "Nicholas Lyndhurst",
+                "David Jason"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "Which country is the largest in the world?",
+            "correct_answer": "Russia",
+            "answer_options": [
+                "United States Of America",
+                "Australia",
+                "Africa",
+                "Russia"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "hard",
+            "question": "Which city had the first ever fashion week?",
+            "correct_answer": "New York City",
+            "answer_options": [
+                "London",
+                "Paris",
+                "Los Angeles",
+                "New York City"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What nut is in the middle of a Ferrero Rocher?",
+            "correct_answer": "Hazelnut",
+            "answer_options": [
+                "Peanut",
+                "Almonds",
+                "Cashew",
+                "Hazelnut"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "easy",
+            "question": "What goes GPU stand for?",
+            "correct_answer": "Graphic Processing Unit",
+            "answer_options": [
+                "Graphic Prototype Unit",
+                "Garbage Processing Unit",
+                "Gaming Processing Unit",
+                "Graphic Processing Unit"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "question": "What does CSS stand for?",
+            "correct_answer": "Cascading Style Sheets",
+            "answer_options": [
+                "Cascading Sketch Sheet",
+                "Copy Style Sheet",
+                "Case Study Sheets",
+                "Cascading Style Sheets"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "question": "In programming what name is given to the data type which represents decimal numbers?",
+            "correct_answer": "Floating Point Numbers",
+            "answer_options": [
+                "Integers",
+                "Strings",
+                "Number",
+                "Floating Point Numbers"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "question": "What is a variable?",
+            "correct_answer": "A variable is a location in memory that we use to store data",
+            "answer_options": [
+                "A variable is a number",
+                "A variable is a message input by the user",
+                "A variable is a floating point number",
+                "A variable is a location in memory that we use to store data"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "easy",
+            "question": "What do you call a portable computer?",
+            "correct_answer": "Laptop",
+            "answer_options": [
+                "RAM",
+                "CPU",
+                "Macbook",
+                "Laptop"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "question": "What storage size is the largest?",
+            "correct_answer": "1TB",
+            "answer_options": [
+                "1GB",
+                "10GB",
+                "55000Bytes",
+                "1TB"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "easy",
+            "question": "What is the most used search engine?",
+            "correct_answer": "Google",
+            "answer_options": [
+                "Yahoo",
+                "Bing",
+                "SOSO",
+                "Google"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "easy",
+            "question": "What do you use to click stuff?",
+            "correct_answer": "Mouse",
+            "answer_options": [
+                "Keyboard",
+                "Headphones",
+                "RAM",
+                "Mouse"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "question": "Which line do you use to connect to the internet?",
+            "correct_answer": "Ethernet",
+            "answer_options": [
+                "Phone Line",
+                "USB",
+                "SSD",
+                "Ethernet"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "easy",
+            "question": "In what decade was the Internet first implemented?",
+            "correct_answer": "1960s",
+            "answer_options": [
+                "1950s",
+                "1940s",
+                "1980s",
+                "1960s"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "correct_answer": "Motherboard",
+            "answer_options": [
+                "CPU",
+                "GPU",
+                "Chipset",
+                "Motherboard"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "question": "ISP stands for?",
+            "correct_answer": "Internet Service Provider",
+            "answer_options": [
+                "Internet Security Protocols",
+                "Internet Survey Period",
+                "Integrated Service Provider",
+                "Internet Service Provider"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "easy",
+            "question": "Google Chrome is an?",
+            "correct_answer": "Web Browser",
+            "answer_options": [
+                "Any person browsing the web",
+                "News Reader",
+                "Web Scraping Service",
+                "Web Browser"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "medium",
+            "question": "The 'http' you type at the beginning of any site's address stands for?",
+            "correct_answer": "Hyper Text Transfer Protocol",
+            "answer_options": [
+                "HTML Transfer Technology Process",
+                "Hyperspace Terms and Tech Protocol",
+                "Hyperspace Techniques & Tech Progress",
+                "Hyper Text Transfer Protocol"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "hard",
+            "question": "Lately you hear a clatter from your computer, especially when you load a program or call up information. What's going on?",
+            "correct_answer": "Your hard disk may be headed for failure",
+            "answer_options": [
+                "It's infested with reindeer",
+                "A loud metallic clatter is normal",
+                "A loose wire is hitting the cooling fan",
+                "Your hard disk may be headed for failure"
+            ]
+        }
+    ]
+}
