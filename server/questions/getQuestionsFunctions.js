@@ -49,10 +49,5 @@ exports.getRandomQuestions = (range, category, difficulty) => {
 
     questionArr = getTheRandomQuestionsList(range, questionArr);
 
-
-    questionArr.push({"total_selected_category_count": questionArr.length})
-
-    questionArr.push({"total_questions_count": q_length})
-
     return questionArr
 }

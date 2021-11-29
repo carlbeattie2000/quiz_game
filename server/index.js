@@ -7,7 +7,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://127.0.0.1:5500"
+        origin: ["http://127.0.0.1:5500", "http://192.168.0.3:8080"]
     }
 });
 
@@ -26,23 +26,61 @@ io.use(function(socket, next) {
     sessionMiddleware(socket.request, socket.request.res || {}, next);
 });
 
-var hostName = "";
-
 app.use("/", questionsAPI);
+
+var users = {};
+var usersScores = {}
 
 io.on("connection", (socket) => {
     socket.on("join_room", (values) => {
-        socket.join(values[0]);
-        hostName = values[0];
-        io.emit("joined_room", values[0]);
-        io.emit("new_user", values[1]);
+        // set the rooms name
+        socket.room = values[0]
+        // set session values
         socket.request.session.username = values[1];
+
+        if (users[socket.room+"_connectionLimit"] === undefined) {
+            users[socket.room+"_connectionLimit"] = values[2]
+        } else {
+            if(users[socket.room].length > users[socket.room+"_connectionLimit"]) {
+                socket.emit("room_full")
+                return
+            }
+        }
+
+        if (values[3] == 1 && users[socket.room] == undefined) return socket.emit("room_not_created");
+
+        // add player to online players
+        if (users[socket.room] == undefined) {
+            users[socket.room] = []
+            users[socket.room].push(socket.request.session.username);
+        } else {
+            if (users[socket.room].includes(socket.request.session.username)) return socket.emit("user_exists");
+            users[socket.room].push(socket.request.session.username);
+        }
+
+        socket.join(socket.room); // join the new room name
+
+        // join the room
+        socket.emit("joined_room", {roomName: values[0], username: socket.request.session.username});
+
+        io.to(socket.room).emit("new_user", users[socket.room]);
     })
-    socket.on("start_quiz", () => {
-        io.emit("quiz_started");
-    })
-    socket.on("log_username", () => {
-        socket.emit("log_username", socket.request.session.username);
+    socket.on("start_quiz", (questions) => {
+        var users_arr = []
+        for (var user of users[socket.room]) {
+            if (user != "host") {
+                var userScore = {
+                    "username": user,
+                    "score": 0
+                }
+                users_arr.push(userScore);        
+            } 
+        }
+        usersScores[socket.room] = users_arr;
+
+        if (socket.request.session.username == "host") {
+            socket.emit("quiz_started", {"userscores": usersScores[socket.room]});
+        }
     })
 })
 
