@@ -5,17 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Family Trivia - Games</title>
+    <title>Trivia - The Game</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="./pages/login.html">Login</a></li>
-            <li><a href="./pages/register.html">Register</a></li>
-        </ul>
-    </nav>
     <section class="page-title">
-        <h1>Family Trivia - Rooms</h1>
+        <h1>Trivia - Rooms</h1>
     </section>
 
     <section id="rooms" class="rooms-section">
@@ -24,6 +18,8 @@
         </div>
         <div class="new-room hide" id="new-room-form-div">
             <form id="new-room-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" value="host" disabled>
                 <label for="room-name" maxLength="12">Room Name</label>
                 <input type="text" id="room-name" autocomplete="off">
                 <label for="room-name" id="room-name-error" style="font-size: 0.5rem;"></label>
@@ -39,14 +35,24 @@
             </form>
         </div>
 
-        <div class="rooms" id="top">
-            <!-- These will be created per room created -->
+        <div id="join-show-form">
+            <button id="join-room" class="btn-main">Join Room</button>
         </div>
-        <a href="#top">Back to Top</a>
+        <div class="new-room hide" id="join-room-form-div">
+            <form id="join-room-form">
+                <label for="username-join">Username</label>
+                <input type="text" id="username-join">
+                <label for="join_room-name" maxLength="12">Room Name</label>
+                <input type="text" id="join-room-name" autocomplete="off">
+                <button type="submit" class="btn-main">Join Room</button>
+                <button id="cancel-join" class="btn-main">Cancel</button>
+            </form>
+        </div>
     </section>
 
     <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
     <script src="assets/js/simpleEvents.js"></script>
+    <script src="assets/js/renderPages.js"></script>
     <script src="assets/js/socket.js"></script>
 </body>
 </html>

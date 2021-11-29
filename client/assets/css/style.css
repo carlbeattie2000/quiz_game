@@ -11,37 +11,6 @@ body {
     height: 80vh;
 }
 
-nav ul {
-    display: flex;
-    justify-content: flex-end;
-    margin: 1.5rem 0;
-}
-
-nav ul li {
-    display: flex;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    transition: all 500ms;
-    -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
-    -ms-transition: all 500ms;
-    -o-transition: all 500ms;
-}
-
-nav ul li a:hover {
-    color: #0791d3;
-}
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-    display: none;
-}
-
 .page-title {
     width: 100%;
     text-align: center;
@@ -58,7 +27,6 @@ nav ul li a:hover {
     height: 100%;
     width: 70%;
     margin: auto;
-    overflow-y: scroll;
     border-radius: 0.2rem;
     -webkit-border-radius: 0.4rem;
     -moz-border-radius: 0.2rem;
@@ -142,4 +110,179 @@ nav ul li a:hover {
 
 .btn-main:hover {
     background: #1eb858;
+}
+
+#join-show-form{
+    margin: .7rem 0;
+}
+
+#join-show-form button {
+    padding: .5rem;
+}
+
+#join-room-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#join-room-form label, input {
+    margin: 0.5rem 0;
+}
+
+#join-room-form button {
+    margin: 1rem 0;
+}
+
+#quiz_lobby_players{
+    padding: 0.5rem;
+    background: rgb(238, 238, 238);
+}
+
+#quiz_lobby_players ul {
+    list-style: none;
+}
+
+#quiz_lobby_players li {
+    padding: 0.5rem 0;
+}
+
+#quiz_start_form_div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+#start-quiz-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#start-quiz-form select, button {
+    margin: 1.2rem 0;
+}
+
+#start-quiz-form label {
+    margin: 0.3rem 0;
+}
+
+.score_board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.score_card {
+    display: flex;
+    background: orange;
+    margin: .4rem;
+    padding: .6rem;
+}
+  
+.score_card div {
+    margin: 0 .2rem;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgb(60, 60, 60);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  
+  
+@media only screen and (max-width: 750px) {
+    #quiz_start_form_div {
+        width: 100%;
+    }
+
+    #show-form {
+        width: 100%;
+    }
+
+    #show-form button {
+        height: 110%;
+        border-bottom: 10px solid #fff;
+    }
+
+    #join-show-form {
+        width: 100%;
+    }
+
+    #join-show-form button {
+        height: 110%;
+    }
+
+    input, select {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        width: 100%;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+    }
+    
+    #new-room-form {
+        width: 100%;
+    }
+
+    .rooms-section {
+        width: 100%;
+        padding: 0;
+    }
 }
