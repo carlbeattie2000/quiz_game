@@ -28,10 +28,10 @@
                 <input type="text" id="room-name" autocomplete="off">
                 <label for="room-name" id="room-name-error" style="font-size: 0.5rem;"></label>
                 <label for="max-players">Max Players</label>
-                <input type="number" id="max-players" placeholder="MAX => 20" min="2" max="20">
+                <input type="number" id="max-players" placeholder="MAX => 20" min="2" max="20" value=3 disabled>
                 <label for="roomType">Room Type</label>
                 <select id="roomType">
-                    <option value="0">Public</option>
+                    <option value="0" disabled>Public</option>
                     <option value="1">Private</option>
                 </select>
                 <button type="submit" class="btn-main">Create Room</button>
@@ -41,16 +41,12 @@
 
         <div class="rooms" id="top">
             <!-- These will be created per room created -->
-            <div class="room">
-                <button class="btn-main">Join Room</button>
-                <span class="players">10/12</span>
-                <span class="type">Public</span>
-                <span class="room-name">TheFunnyOnes</span>
-            </div>
         </div>
         <a href="#top">Back to Top</a>
     </section>
 
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
     <script src="assets/js/simpleEvents.js"></script>
+    <script src="assets/js/socket.js"></script>
 </body>
 </html>

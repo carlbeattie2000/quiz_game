@@ -1,11 +1,20 @@
 const express = require("express");
+
+const cors = require('cors');
+
+var corsOptions = {
+    origin: 'http://127.0.0.1:5500',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+
 const getQuestions = require("./getQuestionsFunctions")
 
 const api = express.Router();
 
 var tokens = ["xxxbbbddd"];
 
-api.get("/get-questions", (req, res) => {
+api.get("/get-questions", cors(corsOptions), (req, res) => {
     // querys
     var amount = req.query.amount;
     var category = req.query.category
