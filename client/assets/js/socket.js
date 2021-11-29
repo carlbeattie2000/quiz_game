@@ -33,8 +33,19 @@ document.getElementById("new-room-form").addEventListener("submit", (e) => {
 })
 
 const buildRoom = `
-    <div class="lobby">
-        <button id="start_game" style="margin: 1.5rem;">Start Game</button>
+    <div class="new-room" id="new-room-form-div">
+        <form id="new-room-form">
+            <label for="questionAmount">Question Amount</label>
+            <select id="questionsAmount">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+            </select>
+            <button type="submit" class="btn-main">Create Room</button>
+            <button id="cancel-room-creation" class="btn-main">Cancel</button>
+        </form>
     </div>
 `
 // NOTE AND IMPORTANT ONE, THIS BUTTON WORKS ON BOTH CLIENTS PAGES SO THE OTHER BUTTON CAN AND MUST BE ABLE TO WORK TO JOIN ROOMS LOOK INTO IT
