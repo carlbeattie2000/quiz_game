@@ -36,6 +36,7 @@ var users = {},
     roomQuestions = {},
     roundQuestionCount = {},
     roomHostId = {},
+    roomUsersIds = {},
     roomRoundQuestion = {},
     usersRoundAnswers = {};
 
@@ -68,11 +69,16 @@ io.on("connection", (socket) => {
             users[socket.room] = []; // create new empty array for storing the users
             users[socket.room].push(username); // set the users username into there session
 
-            roomHostId[socket.room] = socket.id // set the hostsID as the host will be the first one to connect this wont be called again so it works.
+            roomHostId[socket.room] = socket.id; // set the hostsID as the host will be the first one to connect this wont be called again so it works.
         } else {
             if (users[socket.room].includes(username)) {
                 return socket.emit("user_exists");
             }
+
+            if (roomUsersIds[socket.room] === undefined) {
+                roomUsersIds[socket.room] = []
+            }
+            roomUsersIds[socket.room].push(socket.id);
 
             users[socket.room].push(username)
         }
@@ -113,23 +119,62 @@ io.on("connection", (socket) => {
 
         roundQuestionCount[socket.room] += 1;
 
-        console.log(roundQuestionCount[socket.room]);
+        usersRoundAnswers = {};
     })
     
     socket.on("get_current_round", () => {
-        socket.emit("next_round_client", roomRoundQuestion[socket.room].answer_options);
+        for (var user of roomUsersIds[socket.room]) {
+            io.to(user).emit("next_round_client", roomRoundQuestion[socket.room].answer_options)
+        }
 
         io.to(roomHostId[socket.room]).emit("host_next_question", roomRoundQuestion[socket.room].question);
     })
 
     socket.on("answer_locked_server", (answer) => {
         usersRoundAnswers[socket.request.session.username] = answer;
-        console.log(answer);
-        socket.emit("answer_locked_client");
-    })
+        console.log("user answers", usersRoundAnswers);
+        // need to get the length of answers answered in usersRoundAnswers
+        var tmp_arr = [];
+        for (user of users[socket.room]) {
+            for (const key of Object.keys(usersRoundAnswers)) {
+                if (key === user) {
+                    tmp_arr.push([key, usersRoundAnswers[key]])
+                }
+            }
+        }
 
-    socket.on("server_round_end", () => {
-        io.to(socket.room).emit("round_end");
+        console.log("tmp_arr, ", tmp_arr);
+
+        socket.emit("answer_locked_client");
+
+        // now need check if everyone has answered
+        if (tmp_arr.length >= users[socket.room].length - 1) {
+            console.log("if statment check!!!")
+            // check who answered correctly
+            var scr_arr = []
+            for (var user of tmp_arr) {
+                if (user[1] === roomRoundQuestion[socket.room].correct_answer) {
+                    scr_arr.push(user[0]);
+                }
+            }
+
+            for (var userScore of usersScores[socket.room]) {
+                if (scr_arr.includes(userScore.username)) {
+                    userScore.score +=1
+                }
+            };
+
+            // emit this too the host
+            io.to(roomHostId[socket.room]).emit("update_score", {"userscores": usersScores[socket.room]});
+
+            setTimeout(
+                () => {
+                    socket.emit("round_end");
+                },
+                4 * 1000
+            );
+            
+        }
     })
 })
 
