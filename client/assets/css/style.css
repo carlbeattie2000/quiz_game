@@ -108,10 +108,6 @@ body {
     -o-transition: all 400ms;
 }
 
-.btn-main:hover {
-    background: #1eb858;
-}
-
 #join-show-form{
     margin: .7rem 0;
 }
@@ -170,10 +166,6 @@ body {
     background: orange;
 }
 
-.btn-locked:hover {
-    background: orange
-}
-
 .score_board {
     display: flex;
     flex-wrap: wrap;
@@ -195,6 +187,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 90vh;
+    text-align: center;
 }
 
 #question-div h3 {
@@ -210,9 +204,14 @@ body {
     border: 1px solid #ccc;
 }
 
-#question-div tr:nth-child(2) {
+#question-div tr:nth-child(odd) {
   background: #ccc;
 }
+
+#question-div tr:first-child {
+    background: #fff;
+}
+
   
 
 .lds-ellipsis {
@@ -313,8 +312,33 @@ body {
         width: 100%;
     }
 
+    #new-room-form label, input {
+        font-size: 1.5rem;
+    }
+    
+    #new-room-form button {
+        font-size: 1.5rem;
+    }
+
     .rooms-section {
         width: 100%;
         padding: 0;
+    }
+    .btn-main {
+        font-size: 2rem;
+    }
+
+    .btn-phone {
+        font-size: 2.5rem;
+        height: 15vh;
+    }
+}
+
+@media (hover: hover) {
+    .btn-main:hover {
+        background: #1eb858;
+    }
+    .btn-locked:hover {
+        background: orange
     }
 }

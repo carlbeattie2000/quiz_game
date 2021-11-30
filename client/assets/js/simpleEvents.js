@@ -91,9 +91,11 @@ function addOptionButtons(options) {
     var optionsNumber = 0;
 
     for (var option of options) {
-        var button = document.createElement("INPUT");
+        var button = document.createElement("button");
         button.value = option;
+        button.innerHTML = option;
         button.classList.add("btn-main");
+        button.classList.add("btn-phone");
         button.id = optionsNumber;
         mainDiv.appendChild(button);
         optionsNumber++;

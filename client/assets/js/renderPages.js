@@ -22,6 +22,7 @@ const buildRoom = `
                 <select id="questionsCategory">
                     <option value="general%20knowledge">General Knowledge</option>
                     <option value="computer%20science">Computer Science</option>
+                    <option value="music">Music</option>
                     <option value="">Any</option>
                 </select>
                 <button class="btn-main" id="start_game">Start Quiz</button>
@@ -84,6 +85,4 @@ const buildHostLeaderboard = `
             <th>Result</th>
         </tr>
     </table>
-
-    <button id="start_over">Restart</button>
 `
