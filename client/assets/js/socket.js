@@ -74,14 +74,11 @@ socket.on("quiz_started", () => {
 })
 
 socket.on("client_quiz_begin", (userInfo) => {
-    console.log(userInfo.username);
     if (userInfo.username == "host") {
         document.body.innerHTML = buildHostQuizPage;
         updateScoreBoard(userInfo);
         return
-    } 
-
-    socket.emit("get_current_round");
+    }
 })
 
 socket.on("answer_locked_client", () => {
@@ -91,6 +88,7 @@ socket.on("answer_locked_client", () => {
 
 socket.on("round_end", () => {
     socket.emit("next_round_server");
+    socket.emit("get_current_round");
 })
 
 socket.on("next_round_client", (options) => {
@@ -100,7 +98,7 @@ socket.on("next_round_client", (options) => {
 })
 
 socket.on("game_end", () => {
-
+    
 })
 
 // host
@@ -108,4 +106,8 @@ socket.on("game_end", () => {
 socket.on("host_next_question", (question) => {
     console.log(question)
     setHostQuestion(question);
+})
+
+socket.on("update_score", (new_score) => {
+    updateScoreBoard(new_score);
 })
