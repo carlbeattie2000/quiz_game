@@ -150,3 +150,34 @@ function disabledAllButtons() {
 function userLockAnswer(answer) {
     socket.emit("answer_locked_server", answer);
 }
+
+function showLeaderboard() {
+    var main_div = document.getElementById("question-div");
+    main_div.innerHTML = buildHostLeaderboard;
+}
+
+function addResultsToLeaderboard(results) {
+    var table = document.getElementById("leaderboard-table");
+    for (var result of results) {
+        var table_row = document.createElement("tr");
+
+        var table_content_one = document.createElement("td");
+        table_content_one.innerHTML = result[0];
+
+        var table_content_two = document.createElement("td");
+        table_content_two.innerHTML = result[1];
+
+        var table_content_three = document.createElement("td");
+        table_content_three.innerHTML = result[2];
+
+        var table_content_four = document.createElement("td");
+        table_content_four.innerHTML = result[3];
+
+        table_row.append(table_content_one);
+        table_row.append(table_content_two);
+        table_row.append(table_content_three);
+        table_row.append(table_content_four);
+
+        table.appendChild(table_row);
+    }
+}

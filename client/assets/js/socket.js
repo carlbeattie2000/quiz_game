@@ -111,3 +111,9 @@ socket.on("host_next_question", (question) => {
 socket.on("update_score", (new_score) => {
     updateScoreBoard(new_score);
 })
+
+socket.on("results_screen", (results) => {
+    // display the quiz results
+    showLeaderboard();
+    addResultsToLeaderboard(results);
+})

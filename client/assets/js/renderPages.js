@@ -74,3 +74,16 @@ const buildClientQuizPage = `
         
     </div>
 `
+
+const buildHostLeaderboard = `
+    <table id="leaderboard-table">
+        <tr>
+            <th>Question</th>
+            <th>Username</th>
+            <th>Answer</th>
+            <th>Result</th>
+        </tr>
+    </table>
+
+    <button id="start_over">Restart</button>
+`

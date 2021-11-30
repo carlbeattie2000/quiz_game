@@ -8,7 +8,7 @@
 }
 
 body {
-    height: 80vh;
+    height: 100vh;
 }
 
 .page-title {
@@ -190,6 +190,30 @@ body {
 .score_card div {
     margin: 0 .2rem;
 }
+
+#question-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#question-div h3 {
+    font-size: 5rem;
+}
+  
+#question-div table {
+    width: 100%;
+    font-size: 1.1rem;
+}
+  
+#question-div table, th, td {
+    border: 1px solid #ccc;
+}
+
+#question-div tr:nth-child(2) {
+  background: #ccc;
+}
+  
 
 .lds-ellipsis {
     display: inline-block;
