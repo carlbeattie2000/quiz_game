@@ -33,6 +33,7 @@ app.use("/", questionsAPI);
 // local storage for question rooms
 var users = {},
     usersScores = {},
+    usersGameLeaderboard = {},
     roomQuestions = {},
     roundQuestionCount = {},
     roomHostId = {},
@@ -123,6 +124,11 @@ io.on("connection", (socket) => {
     })
     
     socket.on("get_current_round", () => {
+        if (roundQuestionCount[socket.room] > roomQuestions[socket.room].length) {
+            io.to(roomHostId[socket.room]).emit("results_screen", usersGameLeaderboard[socket.room]);
+            return
+        }
+
         for (var user of roomUsersIds[socket.room]) {
             io.to(user).emit("next_round_client", roomRoundQuestion[socket.room].answer_options)
         }
@@ -131,42 +137,51 @@ io.on("connection", (socket) => {
     })
 
     socket.on("answer_locked_server", (answer) => {
-        usersRoundAnswers[socket.request.session.username] = answer;
-        console.log("user answers", usersRoundAnswers);
+        // socket event that takes the users locked answer and then once everyone has submitted there answer it does some checks
+        // add scores to whoever is correct
+        // saves the users question, answer and if it was correct or not in a leaderboard dict 
+        // and then moves on to the next question
+        if (usersGameLeaderboard[socket.room] === undefined) { // if the dict to store the users results in does not exists, create a new dict object that equals an array
+            usersGameLeaderboard[socket.room] = [];
+        }
+
+        usersRoundAnswers[socket.request.session.username] = answer; // Get the users answer
         // need to get the length of answers answered in usersRoundAnswers
-        var tmp_arr = [];
+        var tmp_arr = []; 
         for (user of users[socket.room]) {
             for (const key of Object.keys(usersRoundAnswers)) {
                 if (key === user) {
-                    tmp_arr.push([key, usersRoundAnswers[key]])
+                    tmp_arr.push([key, usersRoundAnswers[key]]);
                 }
             }
         }
-
-        console.log("tmp_arr, ", tmp_arr);
 
         socket.emit("answer_locked_client");
 
         // now need check if everyone has answered
         if (tmp_arr.length >= users[socket.room].length - 1) {
-            console.log("if statment check!!!")
             // check who answered correctly
-            var scr_arr = []
+            var scr_arr = [];
             for (var user of tmp_arr) {
+                var correct = false;
                 if (user[1] === roomRoundQuestion[socket.room].correct_answer) {
                     scr_arr.push(user[0]);
+                    correct = true;
                 }
-            }
 
+                usersGameLeaderboard[socket.room].push([roomRoundQuestion[socket.room].question, user[0], user[1], correct]);
+            }
+            // if the user was correct add a point to there score.
             for (var userScore of usersScores[socket.room]) {
                 if (scr_arr.includes(userScore.username)) {
-                    userScore.score +=1
+                    userScore.score +=1;
                 }
             };
 
             // emit this too the host
             io.to(roomHostId[socket.room]).emit("update_score", {"userscores": usersScores[socket.room]});
 
+            // wait 4 seconds before moving on to the next question.
             setTimeout(
                 () => {
                     socket.emit("round_end");
@@ -180,13 +195,4 @@ io.on("connection", (socket) => {
 
 httpServer.listen(3000);
 
-/*  on round end before the next round
-
-setTimeout(
-            () => {
-              console.log('next question');
-            },
-            4 * 1000
-          );
-
-*/
+// Line 58 throws an error sometimes on some instances need to fix

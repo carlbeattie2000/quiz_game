@@ -345,6 +345,7 @@
         {
             "category": "computer science",
             "difficultly": "medium",
+            "question": "What do you call a computers core component?",
             "correct_answer": "Motherboard",
             "answer_options": [
                 "CPU",
