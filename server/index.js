@@ -1,10 +1,12 @@
 const express = require("express");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
-const questionsAPI = require("./questions/questionsAPI")
+const questionsAPI = require("./questions/questionsAPI");
 
 const app = express();
+
 const httpServer = createServer(app);
+
 const io = new Server(httpServer, {
     cors: {
         origin: ["http://127.0.0.1:5500", "http://192.168.0.3:8080"]
@@ -12,60 +14,84 @@ const io = new Server(httpServer, {
 });
 
 var sessionMiddleware = (
-    require("express-session")({
-      secret: "fhdfhdjhfdjfh4r458745rhfgjghfjhgfhfgjfgh",
-      cookie: {
-        maxAge: 1000 * 60 * 60 * 24 // Save the session for 1 day || add * n to save it for n number of days. 
-      },
-      resave: true,
-      saveUninitialized: true,
+    require("express-session") ({
+        secret: "fffgggxxxx",
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 24
+        },
+        resave: true,
+        saveUninitialized: true,
     })
 );
 
-io.use(function(socket, next) {
+io.use((socket, next) => {
     sessionMiddleware(socket.request, socket.request.res || {}, next);
 });
 
 app.use("/", questionsAPI);
 
-var users = {};
-var usersScores = {}
+// local storage for question rooms
+var users = {},
+    usersScores = {},
+    roomQuestions = {},
+    roundQuestionCount = {},
+    roomHostId = {},
+    roomRoundQuestion = {},
+    usersRoundAnswers = {};
 
 io.on("connection", (socket) => {
-    socket.on("join_room", (values) => {
+    socket.on("join_room", (data) => {
         // set the rooms name
-        socket.room = values[0]
-        // set session values
-        socket.request.session.username = values[1];
+        socket.room = data[0];
 
+        // set the session username
+        socket.request.session.username = data[1];
+        // username quick accesses
+        var username = socket.request.session.username;
+
+        // limit the users connected to what is set by the host
         if (users[socket.room+"_connectionLimit"] === undefined) {
-            users[socket.room+"_connectionLimit"] = values[2]
+            users[socket.room+"_connectionLimit"] = data[2];
         } else {
-            if(users[socket.room].length > users[socket.room+"_connectionLimit"]) {
-                socket.emit("room_full")
-                return
+            if (users[socket.room].length > users[socket.room+"_connectionLimit"]) {
+                socket.emit("room_full");
             }
         }
 
-        if (values[3] == 1 && users[socket.room] == undefined) return socket.emit("room_not_created");
-
-        // add player to online players
-        if (users[socket.room] == undefined) {
-            users[socket.room] = []
-            users[socket.room].push(socket.request.session.username);
-        } else {
-            if (users[socket.room].includes(socket.request.session.username)) return socket.emit("user_exists");
-            users[socket.room].push(socket.request.session.username);
+        // check if the room exists before a normal user can join the room
+        if (data[3] === 1 && users[socket.room] === undefined) {
+            return socket.emit("room_not_created");
         }
 
-        socket.join(socket.room); // join the new room name
+        // add player to waiting in lobby
+        if (users[socket.room] === undefined) {
+            users[socket.room] = []; // create new empty array for storing the users
+            users[socket.room].push(username); // set the users username into there session
 
-        // join the room
-        socket.emit("joined_room", {roomName: values[0], username: socket.request.session.username});
+            roomHostId[socket.room] = socket.id // set the hostsID as the host will be the first one to connect this wont be called again so it works.
+        } else {
+            if (users[socket.room].includes(username)) {
+                return socket.emit("user_exists");
+            }
 
-        io.to(socket.room).emit("new_user", users[socket.room]);
+            users[socket.room].push(username)
+        }
+
+        socket.join(socket.room) // allow the user to join the room
+
+        socket.emit("joined_room", {roomName: socket.room, username: username});
+
+        io.to(socket.room).emit("new_user", users[socket.room]) // update the lobby players list
     })
-    socket.on("start_quiz", (questions) => {
+
+    socket.on("start_quiz", (question) => {
+        roomQuestions[socket.room] = JSON.parse(question);
+        roundQuestionCount[socket.room] = 0;
+        io.to(socket.room).emit("quiz_started");
+        socket.emit("round_end"); // this should not be here but only way i can get it to work
+    })
+
+    socket.on("start_quiz_global", () => {
         var users_arr = []
         for (var user of users[socket.room]) {
             if (user != "host") {
@@ -78,12 +104,44 @@ io.on("connection", (socket) => {
         }
         usersScores[socket.room] = users_arr;
 
-        if (socket.request.session.username == "host") {
-            socket.emit("quiz_started", {"userscores": usersScores[socket.room]});
-        }
+
+        socket.emit("client_quiz_begin", {"userscores": usersScores[socket.room], username: socket.request.session.username});
+    })
+
+    socket.on("next_round_server", () => {
+        roomRoundQuestion[socket.room] = roomQuestions[socket.room][roundQuestionCount[socket.room]];
+
+        roundQuestionCount[socket.room] += 1;
+
+        console.log(roundQuestionCount[socket.room]);
+    })
+    
+    socket.on("get_current_round", () => {
+        socket.emit("next_round_client", roomRoundQuestion[socket.room].answer_options);
+
+        io.to(roomHostId[socket.room]).emit("host_next_question", roomRoundQuestion[socket.room].question);
+    })
+
+    socket.on("answer_locked_server", (answer) => {
+        usersRoundAnswers[socket.request.session.username] = answer;
+        console.log(answer);
+        socket.emit("answer_locked_client");
+    })
+
+    socket.on("server_round_end", () => {
+        io.to(socket.room).emit("round_end");
     })
 })
 
-// each new room, will generate a token will be stored in a database, and so only routes that have access to a token can access the API
-
 httpServer.listen(3000);
+
+/*  on round end before the next round
+
+setTimeout(
+            () => {
+              console.log('next question');
+            },
+            4 * 1000
+          );
+
+*/
