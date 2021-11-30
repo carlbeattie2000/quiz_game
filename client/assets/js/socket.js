@@ -46,10 +46,6 @@ socket.on("joined_room", (data) => {
     }
 })
 
-socket.on("quiz_started", (usersScores) => {
-    document.body.innerHTML = buildHostQuizPage;
-    updateScoreBoard(usersScores);
-})
 
 socket.on("new_user", (users) => {
     const list = document.getElementById("quiz_lobby_list");
@@ -73,8 +69,43 @@ socket.on("room_not_created", () => {
     alert("This room does not exists, please create one first");
 })
 
-// idea, as i have not grasped webSockets yet, maybe i can have two options.
-// one being create a new room, the other being enter room name to join
-// that way its easier as i really suck at DOM and JS in general at the moment
-// first person to join is host, and give a option to join as the screen display
-// need to get hosts username so only host can start the game
+socket.on("quiz_started", () => {
+    socket.emit("start_quiz_global");
+})
+
+socket.on("client_quiz_begin", (userInfo) => {
+    console.log(userInfo.username);
+    if (userInfo.username == "host") {
+        document.body.innerHTML = buildHostQuizPage;
+        updateScoreBoard(userInfo);
+        return
+    } 
+
+    socket.emit("get_current_round");
+})
+
+socket.on("answer_locked_client", () => {
+    disabledAllButtons();
+    //TODO: add message telling user there answer is locked
+})
+
+socket.on("round_end", () => {
+    socket.emit("next_round_server");
+})
+
+socket.on("next_round_client", (options) => {
+    document.body.innerHTML = buildClientQuizPage;
+    addOptionButtons(options)
+    addAnswerClickListener();
+})
+
+socket.on("game_end", () => {
+
+})
+
+// host
+
+socket.on("host_next_question", (question) => {
+    console.log(question)
+    setHostQuestion(question);
+})

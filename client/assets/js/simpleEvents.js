@@ -40,8 +40,6 @@ function quizFormEvent() {
 
     apiURL += `&amount=${questionAmount}`;
 
-    console.log(apiURL);
-
     xhr.open("GET", apiURL, true) // token will be created and stored when a new room is created and deleted once a room is closed
     xhr.type = "json";
 
@@ -57,7 +55,6 @@ const updateScoreBoard = (users) => {
     mainDiv.innerHTML = "";
     
     for (var user of users.userscores) {
-        console.log(user)
         const containerDiv = document.createElement("div");
         containerDiv.classList.add("score_card");
 
@@ -74,4 +71,82 @@ const updateScoreBoard = (users) => {
 
         mainDiv.appendChild(containerDiv);
     }
+}
+
+function randomizeArray(options) {
+    tmp_arr = [];
+
+    for (var option of options) {
+        tmp_arr.push(option)
+    }
+
+    return tmp_arr.sort( () => .5 - Math.random() );
+}
+
+function addOptionButtons(options) {
+    var mainDiv = document.getElementById("options_section");
+
+    options = randomizeArray(options);
+
+    var optionsNumber = 0;
+
+    for (var option of options) {
+        var button = document.createElement("INPUT");
+        button.value = option;
+        button.classList.add("btn-main");
+        button.id = optionsNumber;
+        mainDiv.appendChild(button);
+        optionsNumber++;
+    }
+
+}
+
+function setHostQuestion(question) {
+    var questionDiv = document.getElementById("question-div");
+    questionDiv.innerHTML = "";
+    var h3 = document.createElement("h3")
+    h3.innerHTML = question;
+    questionDiv.appendChild(h3);
+}
+
+function addAnswerClickListener() {
+    document.getElementById("0").addEventListener("click", (e) => {
+        e.preventDefault();
+        // option a
+        var answer = document.getElementById("0");
+        answer.classList.add("btn-locked");
+        userLockAnswer(answer.value);
+    })
+    document.getElementById("1").addEventListener("click", (e) => {
+        e.preventDefault();
+        // option b
+        var answer = document.getElementById("1");
+        answer.classList.add("btn-locked");
+        userLockAnswer(answer.value);
+    })
+    document.getElementById("2").addEventListener("click", (e) => {
+        e.preventDefault();
+        // option c
+        var answer = document.getElementById("2");
+        answer.classList.add("btn-locked");
+        userLockAnswer(answer.value);
+    })
+    document.getElementById("3").addEventListener("click", (e) => {
+        e.preventDefault();
+        // option d
+        var answer = document.getElementById("3");
+        answer.classList.add("btn-locked");
+        userLockAnswer(answer.value);
+    })
+}
+
+function disabledAllButtons() {
+    document.getElementById("0").disabled = true;
+    document.getElementById("1").disabled = true;
+    document.getElementById("2").disabled = true;
+    document.getElementById("3").disabled = true;
+}
+
+function userLockAnswer(answer) {
+    socket.emit("answer_locked_server", answer);
 }

@@ -166,6 +166,14 @@ body {
     margin: 0.3rem 0;
 }
 
+.btn-locked {
+    background: orange;
+}
+
+.btn-locked:hover {
+    background: orange
+}
+
 .score_board {
     display: flex;
     flex-wrap: wrap;

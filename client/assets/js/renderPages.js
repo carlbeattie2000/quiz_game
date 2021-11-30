@@ -51,15 +51,26 @@ const buildRoomClient = `
 `
 
 const buildHostQuizPage = `
-    <div class="score_board" id="score_board">
-        <div class="score_card">
-            <div class="score_player_name">
-                Player One
-            </div>
-            
-            <div class="score_main">
-                0
+    <div id="main-host-div">
+        <div class="score_board" id="score_board">
+            <div class="score_card">
+                <div class="score_player_name">
+                    Player One
+                </div>
+        
+                <div class="score_main">
+                    0
+                </div>
             </div>
         </div>
+
+        <div id="question-div">
+        </div>
+    </div>
+`
+
+const buildClientQuizPage = `
+    <div class="options" id="options_section">
+        
     </div>
 `
