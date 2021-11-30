@@ -401,6 +401,104 @@
                 "World Wide Web"
             ]
 
+        },
+        {
+            "category": "music",
+            "difficultly": "medium",
+            "question": "Which English Sir has had No. l’s in the 50’s, 60’s, 70’s, 80’s and 90’s?",
+            "correct_answer": "Cliff Richard",
+            "answer_options": [
+                "Freddie Mercury",
+                "David Bowie",
+                "Ali Campbell",
+                "Cliff Richard"
+            ]
+        },
+        {
+           "category": "music",
+           "difficultly": "medium",
+           "question": "What is the name of the duet recorded by Robbie Williams and Gary Barlow in 2010?",
+           "correct_answer": "Shame",
+           "answer_options": [
+               "No Regrets",
+               "Rule The World",
+               "Back for Good",
+               "Shame"
+           ]
+        },
+        {
+            "category": "music",
+            "difficultly": "easy",
+            "question": "What was the name of the Scottish musican who shot to fame in 2021 with a version of the sea shanty Wellerman?",
+            "correct_answer": "Nathan Evans",
+            "answer_options": [
+                "Care Rose",
+                "Lewis Capaldi",
+                "Ed Sheeran",
+                "Nathan Evans"
+            ]
+        },
+        {
+            "category": "music",
+            "difficultly": "easy",
+            "question": "Which Canadian recording artist twice appeared in the Top 10 of the UK Singles Charts in April 2021 with 'Peaches' and 'Hold On'?",
+            "correct_answer": "Justin Bieber",
+            "answer_options": [
+                "Drake",
+                "Michael Buble",
+                "Celine Dion",
+                "Justin Bieber"
+            ]
+        },
+        {
+            "category": "music",
+            "difficultly": "hard",
+            "question": "Complete the name of the Dojo Cat track which briefly topped the UK Singles Chart in April 2021; 'Kiss Me ...?'",
+            "correct_answer": "More",
+            "answer_options": [
+                "Again",
+                "Twice",
+                "Loads",
+                "More"
+            ]
+            
+        },
+        {
+            "category": "music",
+            "difficultly": "easy",
+            "question": "Which well-known musican opened 2021 with the first UK Number 1 of the year?",
+            "correct_answer": "Ed Sheeran",
+            "answer_options": [
+                "Robbie Williams",
+                "Lewis Capaldi",
+                "KSI",
+                "Ed Sheeran"
+            ]
+        },
+        {
+            "category": "music",
+            "difficultly": "easy",
+            "question": "Which track by Olivia Rodrigo taken from the album 'Sour' topped the UK Singles Chart for five weeks in June 2021?",
+            "correct_answer": "Good 4 U",
+            "answer_options": [
+                "Drivers License",
+                "Deja vu",
+                "Hope ur ok",
+                "Good 4 U"
+            ]
+        },
+        {
+            "category": "music",
+            "difficultly": "easy",
+            "question": "Which Harry Styles track which won best 'British Single' at the Brit Awards 2021 opens with the lyric 'Tastes like strawberries on a summer evenin''?",
+            "correct_answer": "Watermelon Sugar",
+            "answer_options": [
+                "Kiss You",
+                "Adore You",
+                "Falling",
+                "Watermelon Sugar"
+
+            ]
         }
     ]
 }

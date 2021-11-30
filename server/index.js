@@ -195,5 +195,7 @@ io.on("connection", (socket) => {
 
 httpServer.listen(3000);
 
-// Line 58 throws an error sometimes on some instances need to fix
-// need to have a restart option at the end of an round that redisplays the quiz menu
+//TODO: Line 58 throws an error sometimes on some instances need to fix
+//TODO: need to have a restart option at the end of an round that redisplays the quiz menu
+//TODO: Save the players chosen answer for that round, and once everyone has chosen an answer display the correct answers by highlighting it green and underneath the question on the host screen display who guess correct answer
+//TODO: API is getting dupes
