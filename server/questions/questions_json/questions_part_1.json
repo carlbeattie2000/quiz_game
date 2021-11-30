@@ -16,19 +16,6 @@
         {
             "category": "general knowledge",
             "difficultly": "easy",
-            "question": "In a website browser address bar, what does “www” stand for?",
-            "correct_answer": "World Wide Web",
-            "answer_options": [
-                "World Wide Website",
-                "World Web Word",
-                "Web Wide World",
-                "World Wide Web"
-            ]
-
-        },
-        {
-            "category": "general knowledge",
-            "difficultly": "easy",
             "question": "In what year were the first Air Jordan sneakers released?",
             "correct_answer": "1984",
             "answer_options": [
@@ -401,6 +388,19 @@
                 "A loose wire is hitting the cooling fan",
                 "Your hard disk may be headed for failure"
             ]
+        },
+        {
+            "category": "computer science",
+            "difficultly": "easy",
+            "question": "In a website browser address bar, what does “www” stand for?",
+            "correct_answer": "World Wide Web",
+            "answer_options": [
+                "World Wide Website",
+                "World Web Word",
+                "Web Wide World",
+                "World Wide Web"
+            ]
+
         }
     ]
 }

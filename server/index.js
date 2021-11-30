@@ -196,3 +196,4 @@ io.on("connection", (socket) => {
 httpServer.listen(3000);
 
 // Line 58 throws an error sometimes on some instances need to fix
+// need to have a restart option at the end of an round that redisplays the quiz menu

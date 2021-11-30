@@ -10,8 +10,10 @@ const getTheRandomQuestionsList = (range, questionsArr) => {
 
     if (range > questionsArr.length) return questionsArr.sort( () => .5 - Math.random());
 
+    questionsArr = questionsArr.sort(() => .5 - Math.random());
+
     for(range; range > 0; range--) {
-        new_arr.push(questionsArr[randomIntFromInterval(0, questionsArr.length - 1)])
+        new_arr.push(questionsArr[range]);
     }
 
     return new_arr
@@ -38,11 +40,7 @@ const filterByDifficulty = (array, difficulty) => {
 }
 
 exports.getRandomQuestions = (range, category, difficulty) => {
-    const questions = questionTest.questions;
-    var questionArr = questions;
-
-
-    var q_length = questions.length;
+    var questionArr = questionTest.questions;
 
     if (category) questionArr = filterByCategory(questionArr, category);
     if (difficulty) questionArr = filterByDifficulty(questionArr, difficulty);
