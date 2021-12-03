@@ -41,6 +41,31 @@ var users = {},
     roomRoundQuestion = {},
     usersRoundAnswers = {};
 
+function resetRoom(roomID) {
+    usersScores[roomID] = undefined;
+    users[roomID] = undefined;
+    usersGameLeaderboard[roomID] = undefined;
+    users[roomID+"_connectionLimit"] = undefined;
+    roomQuestions[roomID] = undefined;
+    roundQuestionCount[roomID] = undefined;
+    roomHostId[roomID] = undefined;
+    roomRoundQuestion[roomID] = undefined;
+    usersRoundAnswers = {}
+    
+}
+
+function emitToPlayers(emitTo, users, emitVar) {
+    if (emitVar != undefined) {
+        for (var user of users) {
+            io.to(user).emit(emitTo, emitVar);
+        }
+
+        return
+    }
+    return users.forEach((user) => io.to(user).emit(emitTo));
+
+}
+
 io.on("connection", (socket) => {
     socket.on("join_room", (data) => {
         // set the rooms name
@@ -129,8 +154,14 @@ io.on("connection", (socket) => {
             return
         }
 
-        for (var user of roomUsersIds[socket.room]) {
-            io.to(user).emit("next_round_client", roomRoundQuestion[socket.room].answer_options)
+        try {
+            emitToPlayers("next_round_client", roomUsersIds[socket.room], roomRoundQuestion[socket.room].answer_options);
+        } catch (e) {
+            resetRoom(socket.room);
+            socket.emit("main_menu");
+            io.socketsLeave(socket.room);
+
+            return
         }
 
         io.to(roomHostId[socket.room]).emit("host_next_question", roomRoundQuestion[socket.room].question);
@@ -180,22 +211,27 @@ io.on("connection", (socket) => {
 
             // emit this too the host
             io.to(roomHostId[socket.room]).emit("update_score", {"userscores": usersScores[socket.room]});
-
-            // wait 4 seconds before moving on to the next question.
+            emitToPlayers("show_correct_answer", roomUsersIds[socket.room], roomRoundQuestion[socket.room].correct_answer);
+            // wait 10 seconds before moving on to the next question.
             setTimeout(
                 () => {
                     socket.emit("round_end");
                 },
-                4 * 1000
+                10 * 1000
             );
             
         }
+    })
+
+    socket.on("leave_room", () => {
+        io.to(roomHostId[socket.room]).emit("main_menu");
+        emitToPlayers("main_menu", roomUsersIds[socket.room]);
+        resetRoom(socket.room);
+        io.socketsLeave(socket.room);
     })
 })
 
 httpServer.listen(3000);
 
 //TODO: Line 58 throws an error sometimes on some instances need to fix
-//TODO: need to have a restart option at the end of an round that redisplays the quiz menu
-//TODO: Save the players chosen answer for that round, and once everyone has chosen an answer display the correct answers by highlighting it green and underneath the question on the host screen display who guess correct answer
-//TODO: API is getting dupes
+//TODO: currently the server is limited to one player, as the roomRoundQuestions object is not implemented correctly.
