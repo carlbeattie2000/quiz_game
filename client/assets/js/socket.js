@@ -1,15 +1,11 @@
 const socket = io("http://192.168.0.3:3000");
+const mainSection = document.getElementById("mainWindow");
 
 document.getElementById("new-room-form").addEventListener("submit", (e) => { // this event listener creates a new room with some options
     e.preventDefault();
     var username = document.getElementById("username").value;
-    var roomName = document.getElementById("room-name").value;
-    if (roomName.length > 12) {
-        document.getElementById("room-name-error").innerText = "Name too long: max 12 chars"
-        return
-    };
+    var roomName = document.getElementById("roomName").value;
     const roomPlayers = 3;
-    const roomType = "Private";
 
     socket.emit("join_room", [roomName, username, roomPlayers]);
 })
@@ -18,11 +14,7 @@ document.getElementById("join-room-form").addEventListener("submit", (e) => { //
     e.preventDefault();
 
     var username = document.getElementById("username-join").value;
-    var roomName = document.getElementById("join-room-name").value;
-    if(roomName.length > 12) {
-        document.getElementById("room-name-error").innerText = "Name too long: max 12 chars";
-        return
-    }
+    var roomName = document.getElementById("joinRoomName").value;
 
     socket.emit("join_room", [roomName, username, 0, 1]);
 })
@@ -35,10 +27,9 @@ socket.on("joined_room", (data) => {
     console.log("You have joined the room", data.roomName)
 
     if (data.username != "host") {
-        document.body.innerHTML = buildRoomClient;
+        mainSection.innerHTML = buildRoomClient;
     } else {
-        document.body.innerHTML = buildRoom;
-
+        mainSection.innerHTML = buildRoom;
         document.getElementById("start-quiz-form").addEventListener("submit", (e) => {
             e.preventDefault();
             quizFormEvent();
@@ -75,7 +66,7 @@ socket.on("quiz_started", () => {
 
 socket.on("client_quiz_begin", (userInfo) => {
     if (userInfo.username == "host") {
-        document.body.innerHTML = buildHostQuizPage;
+        mainSection.innerHTML = buildHostQuizPage;
         updateScoreBoard(userInfo);
         return
     }
@@ -92,19 +83,19 @@ socket.on("round_end", () => {
 })
 
 socket.on("next_round_client", (options) => {
-    document.body.innerHTML = buildClientQuizPage;
+    mainSection.innerHTML = buildClientQuizPage;
     addOptionButtons(options)
     addAnswerClickListener();
 })
 
-socket.on("game_end", () => {
-    
+socket.on("show_correct_answer", (correct_answer) => {
+    // need to highlight the correct answer with a green background
+    getButtonsArray(correct_answer);
 })
 
 // host
 
 socket.on("host_next_question", (question) => {
-    console.log(question)
     setHostQuestion(question);
 })
 
@@ -116,4 +107,8 @@ socket.on("results_screen", (results) => {
     // display the quiz results
     showLeaderboard();
     addResultsToLeaderboard(results);
+})
+
+socket.on("main_menu", () => {
+    location.reload();
 })

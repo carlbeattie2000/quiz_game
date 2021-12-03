@@ -8,45 +8,36 @@
     <title>Trivia - The Game</title>
 </head>
 <body>
-    <section class="page-title">
-        <h1>Trivia - Rooms</h1>
-    </section>
 
-    <section id="rooms" class="rooms-section">
-        <div id="show-form">
-            <button id="new-room" class="btn-main">New Room</button>
-        </div>
-        <div class="new-room hide" id="new-room-form-div">
-            <form id="new-room-form">
-                <label for="username">Username</label>
-                <input type="text" id="username" value="host" disabled>
-                <label for="room-name" maxLength="12">Room Name</label>
-                <input type="text" id="room-name" autocomplete="off">
-                <label for="room-name" id="room-name-error" style="font-size: 0.5rem;"></label>
-                <label for="max-players">Max Players</label>
-                <input type="number" id="max-players" placeholder="MAX => 20" min="2" max="20" value=3 disabled>
-                <label for="roomType">Room Type</label>
-                <select id="roomType">
-                    <option value="0" disabled>Public</option>
-                    <option value="1">Private</option>
-                </select>
-                <button type="submit" class="btn-main">Create Room</button>
-                <button id="cancel-room-creation" class="btn-main">Cancel</button>
-            </form>
-        </div>
+    <section id="mainWindow">
+        <div class="buttons">
+            <button id="openNewRoomForm" class="btn">New room</button>
 
-        <div id="join-show-form">
-            <button id="join-room" class="btn-main">Join Room</button>
-        </div>
-        <div class="new-room hide" id="join-room-form-div">
-            <form id="join-room-form">
-                <label for="username-join">Username</label>
-                <input type="text" id="username-join">
-                <label for="join_room-name" maxLength="12">Room Name</label>
-                <input type="text" id="join-room-name" autocomplete="off">
-                <button type="submit" class="btn-main">Join Room</button>
-                <button id="cancel-join" class="btn-main">Cancel</button>
-            </form>
+            <div class="joining-room-form hidden" id="newRoomForm">
+                <form id="new-room-form">
+                    <label for="username">Host Name</label>
+                    <input type="text" value="host" id="username" disabled>
+                    <label for="roomName">Room Name</label>
+                    <input type="text" id="roomName">
+                    <label for="roomLimit">Room Players Limit</label>
+                    <input type="number" id="roomLimit" min="3" max="10">
+                    <button id="createRoom" class="btn btn-form" type="submit">Create room</button>
+                    <button id="hideRoom" class="btn btn-form">Cancel</button>
+                </form>
+            </div>
+
+            <button id="openJoinRoomForm" class="btn">Join room</button>
+
+            <div class="joining-room-form hidden" id="joinRoomForm">
+                <form id="join-room-form">
+                    <label for="username-join">Username</label>
+                    <input type="text" id="username-join">
+                    <label for="joinRoomName">Room Name</label>
+                    <input type="text" id="joinRoomName">
+                    <button id="joinRoom" class="btn btn-form" type="submit">Join room</button>
+                    <button id="hideRoomJoin" class="btn btn-form">Cancel</button>
+                </form>
+            </div>
         </div>
     </section>
 

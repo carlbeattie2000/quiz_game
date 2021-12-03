@@ -1,342 +1,301 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
     font-family: 'Comfortaa', cursive;
 }
 
-body {
-    height: 100vh;
-}
+html,body { margin:0; padding: 0; }
 
-.page-title {
-    width: 100%;
-    text-align: center;
-    margin: 2rem 0;
-    font-weight: bold 700;
-    font-size: 1.5rem;
-}
-
-.rooms-section {
+.hostMenu {
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 70%;
+    height: 100vh;
+    width: 80%;
     margin: auto;
-    border-radius: 0.2rem;
-    -webkit-border-radius: 0.4rem;
-    -moz-border-radius: 0.2rem;
-    -ms-border-radius: 0.2rem;
-    -o-border-radius: 0.2rem;
 }
 
-#show-form {
-    margin: .7rem 0;
-}
-
-#show-form button {
-    padding: .5rem;
-}
-
-#new-room-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#new-room-form label, input {
-    margin: 0.5rem 0;
-}
-
-#new-room-form button {
-    margin: 1rem 0;
-}
-
-.hide {
-    display: none;
-}
-
-.rooms {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.quizMenuFormContainer {
+    height: 50%;
     width: 100%;
-    text-align: center;
 }
 
-.rooms .room {
+.quizMenuFormContainer form {
     display: flex;
-    width: 15%;
-    max-width: 15%;
     flex-direction: column;
-    margin: 1rem .5rem;
-    background: #ccc;
+    width: 100%;
+}
+
+.quizMenuFormContainer form > input, label, button {
+    margin: 1.5rem 0;
+}
+
+button {
+    width: 50%;
+    margin: 1.5rem auto;
+}
+
+button {
     padding: 1rem;
-    border-radius: 0.2rem;
-    -webkit-border-radius: 0.2rem;
-    -moz-border-radius: 0.2rem;
-    -ms-border-radius: 0.2rem;
-    -o-border-radius: 0.2rem;
-    background: #0791d3;
+    font-size: 1.5rem;
+    background: #4da8da;
     color: #fff;
     font-weight: 700;
-    text-transform: uppercase;
-}
-
-.rooms .room button, span {
-    margin: .4rem 0;
-}
-
-.btn-main {
-    padding: 0.4rem;
-    background: #ff055a;
-    border: none;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 0.2rem;
-    -webkit-border-radius: 0.2rem;
-    -moz-border-radius: 0.2rem;
-    -ms-border-radius: 0.2rem;
-    -o-border-radius: 0.2rem;
-    transition: all 400ms;
-    -webkit-transition: all 400ms;
-    -moz-transition: all 400ms;
-    -ms-transition: all 400ms;
-    -o-transition: all 400ms;
-}
-
-#join-show-form{
-    margin: .7rem 0;
-}
-
-#join-show-form button {
-    padding: .5rem;
-}
-
-#join-room-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#join-room-form label, input {
-    margin: 0.5rem 0;
-}
-
-#join-room-form button {
-    margin: 1rem 0;
-}
-
-#quiz_lobby_players{
-    padding: 0.5rem;
-    background: rgb(238, 238, 238);
-}
-
-#quiz_lobby_players ul {
-    list-style: none;
-}
-
-#quiz_lobby_players li {
-    padding: 0.5rem 0;
-}
-
-#quiz_start_form_div {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: auto;
-}
-
-#start-quiz-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#start-quiz-form select, button {
-    margin: 1.2rem 0;
-}
-
-#start-quiz-form label {
-    margin: 0.3rem 0;
+    border: 1px solid #ccc;
+    transition: all 500ms;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
 }
 
 .btn-locked {
     background: orange;
 }
 
-.score_board {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-  
-.score_card {
-    display: flex;
-    background: orange;
-    margin: .4rem;
-    padding: .6rem;
-}
-  
-.score_card div {
-    margin: 0 .2rem;
-}
 
-#question-div {
+.player-lobby ul {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    list-style: none;
+    height: 100%;
+}
+
+.player-lobby ul li {
+    margin: .4rem 0;
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.player-lobby span {
+    margin: .5rem;
+    color: #fff;
+    animation: slide 5s infinite;
+    -webkit-animation: slide 5s infinite;
+}
+
+@keyframes slide {
+    0% {
+        color: #000;
+    }
+
+    50% {
+        color: #ccc;
+    }
+
+    100% {
+        color: #000;
+    }
+}
+
+.mainGameWindow {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score_board {
+    height: 15%;
+    justify-self: flex-start;
+}
+
+.score {
+    background: #007cc7;
+    color: #fff;
+    padding: .5rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-#question-div h3 {
-    font-size: 5rem;
+.question h1 {
+    font-size: 4rem;
 }
-  
-#question-div table {
+
+.end-table {
+    height: 75%;
+    width: 90%;
+    overflow-x: scroll;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
     width: 100%;
-    font-size: 1.1rem;
-}
-  
-#question-div table, th, td {
-    border: 1px solid #ccc;
+    min-width: 100%;
+    max-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-#question-div tr:nth-child(odd) {
-  background: #ccc;
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
 }
 
-#question-div tr:first-child {
-    background: #fff;
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
 }
 
-  
+.styled-table tr {
+    border-bottom: 1px solid #dddddd;
+}
 
-.lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+.styled-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
 }
-.lds-ellipsis div {
-    position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: rgb(60, 60, 60);
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+.styled-table tr:last-of-type {
+    border-bottom: 2px solid #009879;
 }
-.lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
+
+.styled-table tr.active-row {
+    font-weight: bold;
+    color: #009879;
 }
-.lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
+
+.end-game {
+    width: 50%;
 }
-.lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
+
+.end-game button {
+    width: 50%;
 }
-.lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
+
+.hidden {
+    display: none;
 }
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
-  }
-  
-  
+
 @media only screen and (max-width: 750px) {
-    #quiz_start_form_div {
+    section {
+        height: 100vh;
         width: 100%;
     }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
 
-    #show-form {
+    .btn {
+        margin: 1rem 0;
+        height: 10%;
         width: 100%;
-    }
-
-    #show-form button {
-        height: 110%;
-        border-bottom: 10px solid #fff;
-    }
-
-    #join-show-form {
-        width: 100%;
-    }
-
-    #join-show-form button {
-        height: 110%;
-    }
-
-    input, select {
-        border: 1px solid #ccc;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-        -o-border-radius: 2px;
-        width: 100%;
-        outline: none;
-    }
-
-    button {
-        width: 100%;
-    }
-    
-    #new-room-form {
-        width: 100%;
-    }
-
-    #new-room-form label, input {
-        font-size: 1.5rem;
-    }
-    
-    #new-room-form button {
-        font-size: 1.5rem;
-    }
-
-    .rooms-section {
-        width: 100%;
-        padding: 0;
-    }
-    .btn-main {
         font-size: 2rem;
+        font-weight: 700;
+        border: none;
+        border: 1px solid #ccc;
+        text-transform: uppercase;
+        background: #007cc7;
+        color: #fff;
     }
 
-    .btn-phone {
-        font-size: 2.5rem;
-        height: 15vh;
+    .btn-form {
+        background: #4da8da;
+        color: #fff;
+    }
+
+    .btn-questions {
+        height: 20%;
+        font-size: 1.5rem;
+        margin: .4rem 0;
+    }
+
+    .btn-locked {
+        background: orange;
+    }
+    
+
+    .joining-room-form {
+        width: 100%;
+        height: 100%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    input{
+        margin: 0.5rem 0;
+        height: 10%;
+        font-size: 1.5rem;
+    }
+
+    label {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    .player-lobby {
+        height: 100vh;
+        background: #4da8da;
+    }
+
+    .player-lobby ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        height: 80%;
+    }
+
+    .player-lobby ul li {
+        margin: .4rem 0;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    .player-lobby span {
+        margin: .5rem;
+        color: #fff;
+        animation: slide 5s infinite;
+        -webkit-animation: slide 5s infinite;
+    }
+
+    @keyframes slide {
+        0% {
+            color: #000;
+        }
+
+        50% {
+            color: #fff;
+        }
+
+        100% {
+            color: #000;
+        }
     }
 }
 
 @media (hover: hover) {
-    .btn-main:hover {
-        background: #1eb858;
+    .btn:hover {
+        background: green;
     }
     .btn-locked:hover {
         background: orange

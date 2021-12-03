@@ -1,24 +1,32 @@
-document.getElementById("new-room").addEventListener("click", () => {
-    document.getElementById("new-room-form-div").classList.toggle("hide");
-    document.getElementById("new-room").classList.toggle("hide");
+// new room form display/hide
+document.getElementById("openNewRoomForm").addEventListener("click", () => {
+    document.getElementById("newRoomForm").classList.toggle("hidden");
+    document.getElementById("openNewRoomForm").classList.toggle("hidden");
+    document.getElementById("openJoinRoomForm").classList.toggle("hidden");
 })
 
-document.getElementById("cancel-room-creation").addEventListener("click", (e) => {
+document.getElementById("hideRoom").addEventListener("click", (e) => {
     e.preventDefault();
-    document.getElementById("new-room-form-div").classList.toggle("hide");
-    document.getElementById("new-room").classList.toggle("hide");
+
+    document.getElementById("newRoomForm").classList.toggle("hidden");
+    document.getElementById("openNewRoomForm").classList.toggle("hidden");
+    document.getElementById("openJoinRoomForm").classList.toggle("hidden");
 })
 
-document.getElementById("join-room").addEventListener("click", () => {
-    document.getElementById("join-room-form-div").classList.toggle("hide");
-    document.getElementById("join-room").classList.toggle("hide");
+// join room form display/hide
+document.getElementById("openJoinRoomForm").addEventListener("click", () => {
+    document.getElementById("joinRoomForm").classList.toggle("hidden");
+    document.getElementById("openJoinRoomForm").classList.toggle("hidden");
+    document.getElementById("openNewRoomForm").classList.toggle("hidden");
 })
 
-document.getElementById("cancel-join").addEventListener("click", (e) => {
+document.getElementById("hideRoomJoin").addEventListener("click", (e) => {
     e.preventDefault();
-    
-    document.getElementById("join-room-form-div").classList.toggle("hide");
-    document.getElementById("join-room").classList.toggle("hide");
+
+    document.getElementById("joinRoomForm").classList.toggle("hidden");
+    document.getElementById("openJoinRoomForm").classList.toggle("hidden");
+    document.getElementById("openNewRoomForm").classList.toggle("hidden");
+
 })
 
 function quizFormEvent() {
@@ -55,21 +63,10 @@ const updateScoreBoard = (users) => {
     mainDiv.innerHTML = "";
     
     for (var user of users.userscores) {
-        const containerDiv = document.createElement("div");
-        containerDiv.classList.add("score_card");
-
-        const firstDiv = document.createElement("div");
-        firstDiv.classList.add("score_player_name");
-        firstDiv.innerHTML = user.username; // the users name
-
-        const secondDiv = document.createElement("div");
-        secondDiv.classList.add("score_main");
-        secondDiv.innerHTML = user.score; // get the score
-
-        containerDiv.appendChild(firstDiv);
-        containerDiv.appendChild(secondDiv);
-
-        mainDiv.appendChild(containerDiv);
+        const new_span = document.createElement("span");
+        new_span.innerHTML = user.username + "  ::  " + user.score;
+        new_span.classList.add("score");
+        mainDiv.appendChild(new_span);
     }
 }
 
@@ -94,8 +91,8 @@ function addOptionButtons(options) {
         var button = document.createElement("button");
         button.value = option;
         button.innerHTML = option;
-        button.classList.add("btn-main");
-        button.classList.add("btn-phone");
+        button.classList.add("btn");
+        button.classList.add("btn-questions");
         button.id = optionsNumber;
         mainDiv.appendChild(button);
         optionsNumber++;
@@ -103,12 +100,22 @@ function addOptionButtons(options) {
 
 }
 
+function getButtonsArray(correct_answer) {
+    const buttons_arr = document.querySelectorAll(".btn-questions");
+    
+    for (var button of buttons_arr) {
+        if (button.value == correct_answer) {
+            button.style.backgroundColor = "green";
+        }
+    }
+}
+
 function setHostQuestion(question) {
     var questionDiv = document.getElementById("question-div");
     questionDiv.innerHTML = "";
-    var h3 = document.createElement("h3")
-    h3.innerHTML = question;
-    questionDiv.appendChild(h3);
+    var h1 = document.createElement("h1")
+    h1.innerHTML = question;
+    questionDiv.appendChild(h1);
 }
 
 function addAnswerClickListener() {
@@ -156,6 +163,9 @@ function userLockAnswer(answer) {
 function showLeaderboard() {
     var main_div = document.getElementById("question-div");
     main_div.innerHTML = buildHostLeaderboard;
+    document.getElementById("end_game").addEventListener("click", () => {
+        socket.emit("leave_room");
+    })
 }
 
 function addResultsToLeaderboard(results) {

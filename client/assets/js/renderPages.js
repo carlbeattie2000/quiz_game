@@ -1,88 +1,83 @@
 // this constructor is to create the room lobby menu
 const buildRoom = `
-    <div id="quiz_start_form_div">
-        <div class="new-room">
+    <div class="hostMenu">
+        <div class="quizMenuFormContainer">
             <form id="start-quiz-form">
-                <label for="questionAmount">Question Amount</label>
+                <label for="questionsAmount">Questions Amount</label>
                 <select id="questionsAmount">
+                    <option value="1">1</option>
                     <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="40">40</option>
-                    <option value="50">50</option>
+                    <option value="10">20</option>
+                    <option value="10">30</option>
+                    <option value="10">40</option>
+                    <option value="10">50</option>
                 </select>
-                <label for="questionDifficulty">Question Difficulty</label>
-                <select id="questionDifficulty">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                    <option value="">Any</option>
-                </select>
-                <label for="questionsCategory">Question Category</label>
+                <label for="questionsCategory">Questions Category</label>
                 <select id="questionsCategory">
                     <option value="general%20knowledge">General Knowledge</option>
                     <option value="computer%20science">Computer Science</option>
                     <option value="music">Music</option>
                     <option value="">Any</option>
                 </select>
-                <button class="btn-main" id="start_game">Start Quiz</button>
+                <label for="questionDifficulty">Questions Difficulty</label>
+                <select id="questionDifficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="">Any</option>
+                </select>
+                <button class="btn" id="start-quiz-form">Start Quiz</button>
             </form>
         </div>
-        <div class="new-room" id="quiz_lobby_players">
-            <h4>Players Joined</h4>
+        <div class="player-lobby" id="quiz_lobby_players">
             <ul id="quiz_lobby_list">
             </ul>
+            <span>Waiting for host...</span>
         </div>
     </div>
 `
 
 const buildRoomClient = `
-<div id="quiz_start_form_div">
-    <div class="new-room" id="quiz_lobby_players">
-        <h4>Players Joined</h4>
+    <div class="player-lobby">
         <ul id="quiz_lobby_list">
+            
         </ul>
-
-        <div class="waiting-for-host">
-            <h3>Waiting for host!</h3>
-            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        </div>
+        <span>Waiting for host...</span>
     </div>
-</div>
 `
 
 const buildHostQuizPage = `
-    <div id="main-host-div">
+    <div class="mainGameWindow" id="main-host-div">
         <div class="score_board" id="score_board">
-            <div class="score_card">
-                <div class="score_player_name">
-                    Player One
-                </div>
-        
-                <div class="score_main">
-                    0
-                </div>
-            </div>
         </div>
 
-        <div id="question-div">
+        <div class="question" id="question-div">
+            
         </div>
     </div>
 `
 
 const buildClientQuizPage = `
-    <div class="options" id="options_section">
+    <div class="buttons" id="options_section">
         
     </div>
 `
 
 const buildHostLeaderboard = `
-    <table id="leaderboard-table">
-        <tr>
-            <th>Question</th>
-            <th>Username</th>
-            <th>Answer</th>
-            <th>Result</th>
-        </tr>
-    </table>
+    <div class="end-table">
+        <table class="styled-table" id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Username</th>
+                    <th>Answer</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="end-game">
+        <button id="end_game" class="btn">End Game</button>
+    </div>
 `
