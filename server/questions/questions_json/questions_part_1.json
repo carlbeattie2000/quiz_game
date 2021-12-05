@@ -11,7 +11,6 @@
                 "Green",
                 "Brown"
             ]
-
         },
         {
             "category": "general knowledge",
@@ -24,7 +23,6 @@
                 "1976",
                 "1984"
             ]
-
         },
         {
             "category": "general knowledge",
@@ -37,7 +35,6 @@
                 "11",
                 "22"
             ]
-
         },
         {
             "category": "general knowledge",
@@ -50,7 +47,6 @@
                 "US Open",
                 "The Australian Open"
             ]
-
         },
         {
             "category": "general knowledge",
@@ -63,7 +59,6 @@
                 "Christina Aguilera",
                 "Lady Gaga"
             ]
-
         },
         {
             "category": "general knowledge",
@@ -400,7 +395,6 @@
                 "Web Wide World",
                 "World Wide Web"
             ]
-
         },
         {
             "category": "music",
@@ -415,16 +409,16 @@
             ]
         },
         {
-           "category": "music",
-           "difficultly": "medium",
-           "question": "What is the name of the duet recorded by Robbie Williams and Gary Barlow in 2010?",
-           "correct_answer": "Shame",
-           "answer_options": [
-               "No Regrets",
-               "Rule The World",
-               "Back for Good",
-               "Shame"
-           ]
+            "category": "music",
+            "difficultly": "medium",
+            "question": "What is the name of the duet recorded by Robbie Williams and Gary Barlow in 2010?",
+            "correct_answer": "Shame",
+            "answer_options": [
+                "No Regrets",
+                "Rule The World",
+                "Back for Good",
+                "Shame"
+            ]
         },
         {
             "category": "music",
@@ -461,7 +455,6 @@
                 "Loads",
                 "More"
             ]
-            
         },
         {
             "category": "music",
@@ -497,7 +490,270 @@
                 "Adore You",
                 "Falling",
                 "Watermelon Sugar"
-
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "When did world war two start ?",
+            "correct_answer": "1939",
+            "answer_options": [
+                "1957",
+                "1919",
+                "1958",
+                "1939"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "What is the largest animal in the world?",
+            "correct_answer": "Blue Whale",
+            "answer_options": [
+                "Lion",
+                "Giraffe ",
+                "Crocodile",
+                "Blue Whale"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "medium",
+            "question": "What did the romans call Scotland?",
+            "correct_answer": "Caledonia",
+            "answer_options": [
+                "The Scotsland",
+                "Highlands",
+                "Bitter Cold Land",
+                "Caledonia"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "Who was Henry VIIIs last wife?",
+            "correct_answer": "Catherine Parr",
+            "answer_options": [
+                "Catherine Howard",
+                "Jane Seymour",
+                "Catherine Of Aragon",
+                "Catherine Parr"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "What are the five colours of the Olympic rings?",
+            "correct_answer": "Blue, Yellow, Black, Green and Red",
+            "answer_options": [
+                "Blue, Orange, Black, Green and Red",
+                "Blue, Yellow, Pink, Green and Red",
+                "Blue, Yellow, Black, Lime and red",
+                "Blue, Yellow, Black, Green and Red"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "What is the most famous Mexican beer?",
+            "correct_answer": "Corona",
+            "answer_options": [
+                "Victoria Mexican Lager",
+                "Pacifico",
+                "Tecate",
+                "Corona"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "medium",
+            "question": "Which US motorbike company is known by the initials 'HD'?",
+            "correct_answer": "Harley Davidson",
+            "answer_options": [
+                "Arch Motorcycle",
+                "Indian Motorcycle",
+                "Crocker Motorcycle Company",
+                "Harley Davidson"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "medium",
+            "question": "Which South African city is known as 'Mother City'?",
+            "correct_answer": "Cape Town",
+            "answer_options": [
+                "Johannesburg",
+                "Pretoria",
+                "Durban",
+                "Cape Town"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "medium",
+            "question": "Which author created the book character Hermione Granger",
+            "correct_answer": "JK Rowling",
+            "answer_options": [
+                "William Shakespeare\t",
+                "Danielle Steel",
+                "Jackie Collins",
+                "JK Rowling"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "The Spanish resort Benidorm sits on which sea?",
+            "correct_answer": "Mediterranean Sea",
+            "answer_options": [
+                "Caribbean Sea",
+                "Gulf of Mexico",
+                "North Pacific Ocean",
+                "Mediterranean Sea"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "Koreatown is a well known area of which US west coast city?",
+            "correct_answer": "Los Angeles",
+            "answer_options": [
+                "San Francisco ",
+                "New York City",
+                "Las Vegas ",
+                "Los Angeles"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "What is the official language of the Canadian city Quebec?",
+            "correct_answer": "French",
+            "answer_options": [
+                "English",
+                "Spanish",
+                "Russian",
+                "French"
+            ]
+        },
+        {
+            "category": "computer science",
+            "difficulty": "easy",
+            "question": "Which European country uses the '.es' internet address?",
+            "correct_answer": "Spain",
+            "answer_options": [
+                "United Kingdom",
+                "France",
+                "Poland",
+                "Spain"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "The 1964 and 2020 Olympic Summer Games were held in which Japanese city?",
+            "correct_answer": "Tokyo",
+            "answer_options": [
+                "Koyto",
+                "Hiroshima",
+                "Yokohama",
+                "Tokyo"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "Which US city is known for being the home of the US automobile industry?",
+            "correct_answer": "Detroit",
+            "answer_options": [
+                "New York City",
+                "Chicago",
+                "Boston",
+                "Detroit"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "Which city beginning with 'L' is the third largest city in France?",
+            "correct_answer": "Lyon",
+            "answer_options": [
+                "Lille",
+                "Le Havre",
+                "Le Mans",
+                "Lyon"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "The Olo'upena Falls are in which country of the Americas?",
+            "correct_answer": "United States (Hawaii)",
+            "answer_options": [
+                "Canada",
+                "Brazil",
+                "Cuba",
+                "United States (Hawaii)"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "medium",
+            "question": " Which city in what is now the United States, can trace its origins back to 1626 when it was a trading post known as New Amsterdam?",
+            "correct_answer": "New York",
+            "answer_options": [
+                "Boston",
+                "Philadelphia",
+                "Seattle",
+                "New York"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "The Royal Albert Dock is found in which UK city?",
+            "correct_answer": "Liverpool",
+            "answer_options": [
+                "Edinburgh",
+                "Manchester",
+                "London",
+                "Liverpool"
+            ]
+        },
+        {
+            "category": "music",
+            "difficulty": "easy",
+            "question": "Shane, Brian, Mark, Kian and Nicky made up which Irish boyband?",
+            "correct_answer": "Westlife",
+            "answer_options": [
+                "One Direction",
+                "Take That",
+                "The Beatles",
+                "Westlife"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "In 2018, twelve boys and their football coach were rescued after two weeks in a flooded cave situated in which country?",
+            "correct_answer": "Thailand",
+            "answer_options": [
+                "China",
+                "Philippines ",
+                "Tawian",
+                "Thailand"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficulty": "easy",
+            "question": "Which swimming stroke is named after an insect?",
+            "correct_answer": "Butterfly",
+            "answer_options": [
+                "Dragonfly",
+                "Beatle",
+                "Ant",
+                "Butterfly"
             ]
         }
     ]
