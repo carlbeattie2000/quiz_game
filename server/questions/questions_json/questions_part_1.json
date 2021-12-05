@@ -494,7 +494,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "When did world war two start ?",
             "correct_answer": "1939",
             "answer_options": [
@@ -506,7 +506,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "What is the largest animal in the world?",
             "correct_answer": "Blue Whale",
             "answer_options": [
@@ -518,7 +518,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "medium",
+            "difficultly": "medium",
             "question": "What did the romans call Scotland?",
             "correct_answer": "Caledonia",
             "answer_options": [
@@ -530,7 +530,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "Who was Henry VIIIs last wife?",
             "correct_answer": "Catherine Parr",
             "answer_options": [
@@ -542,7 +542,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "What are the five colours of the Olympic rings?",
             "correct_answer": "Blue, Yellow, Black, Green and Red",
             "answer_options": [
@@ -554,7 +554,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "What is the most famous Mexican beer?",
             "correct_answer": "Corona",
             "answer_options": [
@@ -566,7 +566,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "medium",
+            "difficultly": "medium",
             "question": "Which US motorbike company is known by the initials 'HD'?",
             "correct_answer": "Harley Davidson",
             "answer_options": [
@@ -578,7 +578,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "medium",
+            "difficultly": "medium",
             "question": "Which South African city is known as 'Mother City'?",
             "correct_answer": "Cape Town",
             "answer_options": [
@@ -590,7 +590,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "medium",
+            "difficultly": "medium",
             "question": "Which author created the book character Hermione Granger",
             "correct_answer": "JK Rowling",
             "answer_options": [
@@ -602,7 +602,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "The Spanish resort Benidorm sits on which sea?",
             "correct_answer": "Mediterranean Sea",
             "answer_options": [
@@ -614,7 +614,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "Koreatown is a well known area of which US west coast city?",
             "correct_answer": "Los Angeles",
             "answer_options": [
@@ -626,7 +626,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "What is the official language of the Canadian city Quebec?",
             "correct_answer": "French",
             "answer_options": [
@@ -638,7 +638,7 @@
         },
         {
             "category": "computer science",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "Which European country uses the '.es' internet address?",
             "correct_answer": "Spain",
             "answer_options": [
@@ -650,7 +650,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "The 1964 and 2020 Olympic Summer Games were held in which Japanese city?",
             "correct_answer": "Tokyo",
             "answer_options": [
@@ -662,7 +662,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "Which US city is known for being the home of the US automobile industry?",
             "correct_answer": "Detroit",
             "answer_options": [
@@ -674,7 +674,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "Which city beginning with 'L' is the third largest city in France?",
             "correct_answer": "Lyon",
             "answer_options": [
@@ -686,7 +686,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "The Olo'upena Falls are in which country of the Americas?",
             "correct_answer": "United States (Hawaii)",
             "answer_options": [
@@ -698,7 +698,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "medium",
+            "difficultly": "medium",
             "question": " Which city in what is now the United States, can trace its origins back to 1626 when it was a trading post known as New Amsterdam?",
             "correct_answer": "New York",
             "answer_options": [
@@ -710,7 +710,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "The Royal Albert Dock is found in which UK city?",
             "correct_answer": "Liverpool",
             "answer_options": [
@@ -722,7 +722,7 @@
         },
         {
             "category": "music",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "Shane, Brian, Mark, Kian and Nicky made up which Irish boyband?",
             "correct_answer": "Westlife",
             "answer_options": [
@@ -734,7 +734,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "In 2018, twelve boys and their football coach were rescued after two weeks in a flooded cave situated in which country?",
             "correct_answer": "Thailand",
             "answer_options": [
@@ -746,7 +746,7 @@
         },
         {
             "category": "general knowledge",
-            "difficulty": "easy",
+            "difficultly": "easy",
             "question": "Which swimming stroke is named after an insect?",
             "correct_answer": "Butterfly",
             "answer_options": [
@@ -754,6 +754,282 @@
                 "Beatle",
                 "Ant",
                 "Butterfly"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What is a female deer called?",
+            "correct_answer": "Doe",
+            "answer_options": [
+                "Queen",
+                "Sow",
+                "Cow",
+                "Doe"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What is the only bird that can hover in the air and also ﬂy backwards?",
+            "correct_answer": "Hummingbird",
+            "answer_options": [
+                "Golden eagle",
+                "Barn owl",
+                "House sparrow",
+                "Hummingbird"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Which is the third largest of the Channel Islands?",
+            "correct_answer": "Alderney",
+            "answer_options": [
+                "Sark ",
+                "Guernsey",
+                "Jersey",
+                "Alderney"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What do the numbers add up to on the opposite sides of a dice?",
+            "correct_answer": "Seven",
+            "answer_options": [
+                "Six",
+                "Ten",
+                "Eight",
+                "Seven"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In the zodiac, which animal is linked with Capricorn?",
+            "correct_answer": "Goat",
+            "answer_options": [
+                "Lion",
+                "Dog",
+                "Bear",
+                "Goat"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "How long is there between rounds in boxing?",
+            "correct_answer": "One minute",
+            "answer_options": [
+                "Eight minutes",
+                "Three minutes",
+                "Five minutes",
+                "One minute"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Who was known as the lady with the lamp?",
+            "correct_answer": "Florence Nightingale",
+            "answer_options": [
+                "Margaret McCoubrey",
+                "Winifred Carney",
+                "Dr Elizabeth Bell",
+                "Florence Nightingale"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "In an English trial, how many people sit on the jury?",
+            "correct_answer": "12",
+            "answer_options": [
+                "20",
+                "4",
+                "10",
+                "12"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "Marcel Desailly was a World Cup winner playing for which country?",
+            "correct_answer": "France",
+            "answer_options": [
+                "Belgium",
+                "Poland",
+                "Germany",
+                "France"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "On a standard European roulette wheel which number appears on the green?",
+            "correct_answer": "Zero",
+            "answer_options": [
+                "Three",
+                "Five",
+                "Two",
+                "Zero"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "What number is,,dos” in Spanish?",
+            "correct_answer": "Two",
+            "answer_options": [
+                "One",
+                "Three",
+                "Four",
+                "Two"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In.which game do you draw part of a gallows for every wrong answer?",
+            "correct_answer": "Hangman",
+            "answer_options": [
+                "Word Search",
+                "Who said what?",
+                "Scramble",
+                "Hangman"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "hard",
+            "question": "Brights’ disease affects which organs of the body?",
+            "correct_answer": "Kidneys",
+            "answer_options": [
+                "Heart",
+                "Liver",
+                "Lungs",
+                "Kidneys"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "How many kings of England have been called Philip?",
+            "correct_answer": "None",
+            "answer_options": [
+                "Ten",
+                "Two",
+                "Five",
+                "None"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "How many stomachs does a cow have?",
+            "correct_answer": "Four",
+            "answer_options": [
+                "None",
+                "Two",
+                "One",
+                "Four"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "Which city in the world has the largest population?",
+            "correct_answer": "Shanghai",
+            "answer_options": [
+                "Tokyo",
+                "Seoul",
+                "Chongqing",
+                "Shanghai"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "Whose ship was the first to sail around the world?",
+            "correct_answer": "Ferdinand Magellan",
+            "answer_options": [
+                "James Cook",
+                "Francis Drake",
+                "Ben Ainslie",
+                "Ferdinand Magellan"
+            ]
+        },
+        {
+            "category": "music",
+            "difficultly": "easy",
+            "question": "“Freedom” was the first UK top ten hit for which member of take that?",
+            "correct_answer": "Robbie Williams",
+            "answer_options": [
+                "Gary Barlow",
+                "Howard Donald",
+                "Mark Owen",
+                "Robbie Williams"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Moving anti-clockwise on a dartboard what is the number next to 4?",
+            "correct_answer": "18",
+            "answer_options": [
+                "19",
+                "20",
+                "14",
+                "18"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Who pricked her finger on a spinning wheel and slept for 100 years?",
+            "correct_answer": "Princess Aurora",
+            "answer_options": [
+                "Belle",
+                "Snow White",
+                "Cinderella",
+                "Princess Aurora"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "In which team game do you try to move backwards all the time?",
+            "correct_answer": "Tug of War",
+            "answer_options": [
+                "Hockey",
+                "Dodgers ",
+                "Football",
+                "Tug of War"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "medium",
+            "question": "Which country won the 2015 Rugby World Cup?",
+            "correct_answer": "New Zealand",
+            "answer_options": [
+                "Australia ",
+                "England",
+                "Wales",
+                "New Zealand"
+            ]
+        },
+        {
+            "category": "general knowledge",
+            "difficultly": "easy",
+            "question": "Who was the first British monarch to visit New Zealand?",
+            "correct_answer": "Elizabeth II",
+            "answer_options": [
+                "Victoria",
+                "Edward VIII",
+                "George VI",
+                "Elizabeth II"
             ]
         }
     ]
